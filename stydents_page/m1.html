@@ -1,20 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/theme.css">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/m1.css">
     <title>Maksym page</title>
 </head>
 <body>
-    <button class="desription" onclick="window.location.href='../main.html';">Back</button>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <a href="../main.html" class="logo">Demo</a>
+            <ul class="nav-links">
+                <li><a href="../main.html">Home</a></li>
+                <li><a href="./IM.html">Ivan</a></li>
+                <li><a href="./m1.html">Maksym</a></li>
+                <li><a href="./lefray.html">Yaroslav</a></li>
+            </ul>
+            <button class="hamburger" id="hamburgerBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <button class="theme-toggle">☀️</button>
+        </div>
+    </nav>
+
     <div class="block">
-        <img src="../resources/myphoto.jpg" alt="" class="picture">
+        <img src="../resources/myphoto.jpg" alt="Maksym" class="picture">
         <div class="about">
             <h1 class="name">Maksym</h1>
             <p class="desription">I am Maksym, a motivated student of Computer Engineering at NURE with a passion for frontend development and user experience. I enjoy creating clean, responsive interfaces and improving usability through thoughtful design. I am a fast learner, work well in a team, and focus on delivering results quickly and reliably.</p>
         </div>
     </div>
+
+    <script src="../theme.js"></script>
 </body>
 </html>

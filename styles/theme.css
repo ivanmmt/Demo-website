@@ -1,0 +1,53 @@
+/* Light Theme (Default) */
+:root[data-theme="light"] {
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555555;
+  --accent: #F54A4A;
+  --accent-dark: #e63939;
+  --border-color: #e0e0e0;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --nav-bg: #ffffff;
+  --nav-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Theme */
+:root[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --text-primary: #f0f0f0;
+  --text-secondary: #aaaaaa;
+  --accent: #ff6b6b;
+  --accent-dark: #ff5555;
+  --border-color: #444444;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --nav-bg: #2d2d2d;
+  --nav-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Apply theme colors */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header, .about {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button {
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+button:hover {
+  color: var(--accent);
+}
+
+.block button {
+  transition: all 0.3s ease;
+}
