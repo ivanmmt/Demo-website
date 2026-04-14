@@ -1,69 +1,128 @@
-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    margin-left: 2%;
-    margin-top: 2%;
-}
-
-.picture {
-    margin-top: 10%;
-    width: 300px;
-    height: 450px;
-}
-
 .block {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: space-around;
+    align-items: center;
     gap: 40px;
-    padding: 0 20px;
+    padding: 40px 20px;
     width: 100%;
     box-sizing: border-box;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.picture {
+    width: 300px;
+    height: 450px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: slideInLeft 0.6s ease-out;
+}
+
+.picture:hover {
+    transform: scale(1.05) rotate(-2deg);
+    box-shadow: 0 12px 20px rgba(245, 74, 74, 0.3);
 }
 
 .about {
-    margin-top: 10%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     gap: 20px;
-    width: 100%;
+    flex: 1;
+    animation: slideInRight 0.6s ease-out;
 }
 
-@media (max-width: 786px) {
+.about .name {
+    font-size: 36px !important;
+    margin: 0 !important;
+}
+
+.about .desription {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    max-width: 600px;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .block {
+        gap: 30px;
+    }
+    
+    .picture {
+        width: 250px;
+        height: 375px;
+    }
+}
+
+@media (max-width: 768px) {
     .block {
         flex-direction: column;
         align-items: center;
+        padding: 20px 10px;
+        gap: 30px;
     }
-
+    
     .picture {
-        margin-top: 10%;
         width: 200px;
         height: 300px;
     }
-
-    .name {
-        font-family: 'Press Start 2P';
-        color: #000000;
+    
+    .about {
+        align-items: center;
         text-align: center;
-        margin-top: 1%;
-        font-size: 18px;
     }
-
-    .desription {
-        font-family: 'Shantell Sans';
-        color: #000000;
+    
+    .about .desription {
         text-align: center;
-        margin-top: 0%;
-        font-size: 15px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .block {
+        padding: 15px 10px;
+        gap: 20px;
+    }
+    
+    .picture {
+        width: 150px;
+        height: 225px;
+    }
+    
+    .about .name {
+        font-size: 24px !important;
+    }
+    
+    .about .desription {
+        font-size: 14px;
     }
 }
